@@ -52,7 +52,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="icon" href="/images/dunlop-logo.svg" type="image/jpg" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
+          dangerouslySetInnerHTML={{  
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
