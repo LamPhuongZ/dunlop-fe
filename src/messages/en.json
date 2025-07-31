@@ -1,0 +1,14 @@
+{
+    "Header": {
+        "home": "Home",
+        "about_us": "About Us",
+        "products": "Products",
+        "retailer": "Retailer",
+        "news": "News",
+        "warranty_information": "Warranty Information"
+    },
+    "messageRequired": "Content must be required",
+    "messageMax": "Message can be at most 500 characters",
+    "messageSuccess": "Create Inquiry Successfully!",
+    "messageError": "Server error!"
+}

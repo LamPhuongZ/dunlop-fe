@@ -1,0 +1,14 @@
+{
+    "Header": {
+        "home": "Trang chủ",
+        "about_us": "Giới Thiệu",
+        "products": "Sản Phẩm",
+        "retailer": "Bán lẻ",
+        "news": "Tin Tức",
+        "warranty_information": "Thông Tin Bảo Hành"
+    },
+    "messageRequired": "Nội dung là bắt buộc",
+    "messageMax": "Nội dung tối đa 500 ký tự",
+    "messageSuccess": "Tạo yêu cầu thành công!",
+    "messageError": "Lỗi hệ thống!"
+}
