@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import { Inter, Roboto } from 'next/font/google';
 import { getLocale, getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
-
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
 const inter = Inter({ subsets: ['latin'] });
 const roboto = Roboto({
   subsets: ['latin'],
@@ -17,10 +18,12 @@ export const metadata: Metadata = {
     template: '%s | Dunlop',
   },
   manifest: '/manifest.json',
-  description: 'Trong hơn 120 năm cảm nhận mặt đường, Dunlop luôn dẫn đầu trong việc sáng tạo và ứng dụng công nghệ mới trong lĩnh vực sản xuất lốp xe.',
+  description:
+    'Trong hơn 120 năm cảm nhận mặt đường, Dunlop luôn dẫn đầu trong việc sáng tạo và ứng dụng công nghệ mới trong lĩnh vực sản xuất lốp xe.',
   openGraph: {
     title: 'Dunlop - Thương hiệu sản xuất lốp xe',
-    description: 'Trong hơn 120 năm cảm nhận mặt đường, Dunlop luôn dẫn đầu trong việc sáng tạo và ứng dụng công nghệ mới trong lĩnh vực sản xuất lốp xe.',
+    description:
+      'Trong hơn 120 năm cảm nhận mặt đường, Dunlop luôn dẫn đầu trong việc sáng tạo và ứng dụng công nghệ mới trong lĩnh vực sản xuất lốp xe.',
     siteName: 'Dunlop',
     url: '',
     type: 'website',
@@ -52,7 +55,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="icon" href="/images/dunlop-logo.svg" type="image/jpg" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{  
+          dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
@@ -63,7 +66,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         />
       </head>
       <body className={`${inter.className} ${roboto.className}`} suppressHydrationWarning>
+        <Header />
         <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <Footer />
       </body>
     </html>
   );
