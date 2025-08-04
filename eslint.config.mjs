@@ -1,15 +1,15 @@
-import { dirname } from 'path'
-import { fileURLToPath } from 'url'
-import { FlatCompat } from '@eslint/eslintrc'
-import prettier from 'eslint-plugin-prettier'
-import prettierConfig from 'eslint-config-prettier'
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { FlatCompat } from '@eslint/eslintrc';
+import prettier from 'eslint-plugin-prettier';
+import prettierConfig from 'eslint-config-prettier';
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
-})
+});
 
 const eslintConfig = [
   {
@@ -26,17 +26,7 @@ const eslintConfig = [
     rules: {
       ...prettierConfig.rules,
 
-      'prettier/prettier': [
-        'error',
-        {
-          tabWidth: 2,
-          useTabs: false,
-          semi: true,
-          singleQuote: true,
-          printWidth: 100,
-          trailingComma: 'all',
-        },
-      ],
+      'prettier/prettier': ['error'],
 
       indent: 'off',
       '@typescript-eslint/indent': 'off',
@@ -49,6 +39,6 @@ const eslintConfig = [
       'no-console': 'warn',
     },
   },
-]
+];
 
-export default eslintConfig
+export default eslintConfig;
