@@ -45,7 +45,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const locale = await getLocale();
   const messages = await getMessages();
 
@@ -65,9 +69,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           }}
         />
       </head>
-      <body className={`${inter.className} ${roboto.className}`} suppressHydrationWarning>
+      <body
+        className={`${inter.className} ${roboto.className}`}
+        suppressHydrationWarning>
         <Header />
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
         <Footer />
       </body>
     </html>
