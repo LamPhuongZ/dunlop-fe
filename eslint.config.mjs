@@ -22,6 +22,9 @@ const eslintConfig = [
     files: ['**/*.{js,jsx,ts,tsx,mjs,cjs}'],
     plugins: {
       prettier: prettier,
+      'prettier/prettier': ['error'],
+      indent: 'off',
+      '@typescript-eslint/indent': 'off',
     },
     rules: {
       ...prettierConfig.rules,

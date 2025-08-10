@@ -48,6 +48,16 @@
   @apply active:scale-95 transition-transform duration-200 ease-in-out hover:cursor-pointer hover:scale-[102%];
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* IE and Edge */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
