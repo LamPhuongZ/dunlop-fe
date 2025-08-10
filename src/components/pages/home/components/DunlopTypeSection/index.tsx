@@ -1,7 +1,6 @@
 import React from 'react';
 import './index.css';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 const DunlopTypeSection = () => {
   return (
     <div className="max-w-4/5 mt-10 mx-auto">
