@@ -22,7 +22,7 @@ const ProductTypeButtons = ({
     <button
       onClick={onClick}
       aria-label={content}
-      className="button-onclick flex flex-col items-center gap-2 p-4 rounded-lg transition-shadow duration-300">
+      className="button-onclick flex flex-col items-center gap-2 pt-0 px-4 pb-4 rounded-lg transition-shadow duration-300">
       <Image
         src={src}
         alt={alt}
