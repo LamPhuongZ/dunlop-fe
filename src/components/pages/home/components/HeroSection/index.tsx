@@ -13,7 +13,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import CarTypes, { CarTypesProps } from '../CarTypes/CarTypes';
+import CarTypes from '../CarTypes/CarTypes';
+
 const HERO_PRODUCTS = [
   {
     src: '/images/tire.png',
