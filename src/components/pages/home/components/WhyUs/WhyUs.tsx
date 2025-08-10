@@ -28,7 +28,7 @@ const WhyUs = () => {
       <h3 className="text-5xl font-extrabold uppercase text-center text-dunlop-black tracking-tight">
         Vì sao nên chọn dunlop?
       </h3>
-      <div className="grid grid-cols-4 gap-8 mt-20">
+      <div className="max-w-4/5 grid grid-cols-4 gap-12 mt-20 mx-auto">
         {WhyUsData.map((item, index) => (
           <div
             key={index}
