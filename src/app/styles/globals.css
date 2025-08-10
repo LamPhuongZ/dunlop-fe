@@ -5,6 +5,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-dunlop-yellow: #ffd500;
+  --color-dunlop-black: #231f20;
+  --color-dunlop-white: #ffffff;
+  --color-dunlop-gray: #bfbfbf;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);

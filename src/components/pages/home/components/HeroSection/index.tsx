@@ -13,7 +13,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import CarTypes from '../CarTypes/CarTypes';
+import CarTypes from './CarTypes/CarTypes';
 
 const HERO_PRODUCTS = [
   {
