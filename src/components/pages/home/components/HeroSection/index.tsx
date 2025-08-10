@@ -1,16 +1,18 @@
 'use client';
 
-import { Modal, Box, Typography, Button, Input } from '@mui/material';
 import React, { ChangeEvent, useState } from 'react';
 import { Search, X } from 'lucide-react';
 import Image from 'next/image';
 import ProductTypeButtons from './ProductTypeButtons/ProductTypeButtons';
-import HorizontalStepper from './Stepper/HorizontalStepper';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-
+import SearchModal from './SearchModal/SearchModal';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 const HERO_PRODUCTS = [
   {
     src: '/images/tire.png',
@@ -60,10 +62,6 @@ const HeroSection = () => {
     setSelectedProduct(null);
   };
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setBrand(event.target.value);
-  };
-
   return (
     <section
       id="hero"
@@ -96,14 +94,16 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* MUI Modal */}
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="product-modal-title"
-        aria-describedby="product-modal-description">
-        <Box className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-[40px] bg-white rounded-lg shadow-2xl text-black flex flex-col items-center gap-10 min-w-2/3">
-          <div className="flex gap-10 item-center font-2xl mt-10">
+      {/* Pop up content */}
+      <Dialog open={open} onOpenChange={handleClose}>
+        <DialogContent className="[&>button:last-child]:hidden p-10 bg-white rounded-lg shadow-2xl text-black flex flex-col items-center gap-10 !max-w-[900px]">
+          <DialogHeader className="sr-only">
+            <DialogTitle id="product-modal-title">
+              Product Selection
+            </DialogTitle>
+          </DialogHeader>
+
+          <div className="flex gap-10 text-2xl mt-10">
             {HERO_PRODUCTS.map((product, index) => (
               <ProductTypeButtons
                 key={index}
@@ -116,15 +116,16 @@ const HeroSection = () => {
           </div>
 
           <div className="mt-[60px] border-2 border-[#000] rounded-[20px] flex justify-center items-center p-10 gap-8">
-            <HorizontalStepper />
+            <SearchModal />
           </div>
+
           <button
             onClick={handleClose}
             className="p-1 rounded-full border-3 border-black hover:rotate-[90deg] transition-transform duration-300 absolute top-8 right-8">
             <X className="stroke-[3]" />
           </button>
-        </Box>
-      </Modal>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
