@@ -1,5 +1,9 @@
-import { DunlopTypeSection, HeroSection } from '@/components/pages/home';
-import WhyUs from '@/components/pages/home/components/WhyUs/WhyUs';
+import {
+  DunlopTypeSection,
+  HeroSection,
+  WhyUs,
+  QNA,
+} from '@/components/pages/home';
 
 export default function Home() {
   return (
@@ -7,6 +11,7 @@ export default function Home() {
       <HeroSection />
       <DunlopTypeSection />
       <WhyUs />
+      <QNA />
     </>
   );
 }
