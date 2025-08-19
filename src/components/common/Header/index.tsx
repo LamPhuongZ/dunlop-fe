@@ -33,7 +33,7 @@ const Header = () => {
             <Link href="/" className="text-gray-700 hover:text-black ">
               Home
             </Link>
-            <Link href="/about" className="text-gray-700 hover:text-black ">
+            <Link href="/about-us" className="text-gray-700 hover:text-black ">
               About us
             </Link>
             <Link href="/products" className="text-gray-700 hover:text-black ">
@@ -80,9 +80,9 @@ const Header = () => {
               Home
             </Link>
             <Link
-              href="/about"
+              href="/about-us"
               className="block text-gray-700 hover:text-black ">
-              About
+              About Us
             </Link>
             <Link
               href="/services"
