@@ -1,18 +1,14 @@
 import * as React from 'react';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogTrigger,
-} from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Checkbox } from '@/components/ui/checkbox';
+import SignIn from '../components/SignIn';
+import { useState } from 'react';
+import RegisterPage from '../components/RegisterPage/RegisterPage';
+
+type ModalType = 'login' | 'register';
 
 const SignInDialog = () => {
+  const [modalType, setModalType] = useState<ModalType>('login');
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -22,42 +18,14 @@ const SignInDialog = () => {
           Sign in
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[400px]">
-        <DialogHeader>
-          <DialogTitle>Đăng nhập</DialogTitle>
-          <DialogDescription>
-            Không có tài khoản? Đăng ký ngay
-          </DialogDescription>
-        </DialogHeader>
-        <form className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="Nhập email" required />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="password">Mật khẩu</Label>
-            <Input
-              id="password"
-              type="password"
-              placeholder="••••••••"
-              required
-            />
-          </div>
-          <div className="flex justify-between">
-            <div className="flex items-center space-x-2">
-              <Checkbox id="save-password" />
-              <Label htmlFor="save-password">Ghi nhớ</Label>
-            </div>
-            <p className="underline text-dunlop-black font-medium">
-              Quên mật khẩu
-            </p>
-          </div>
-        </form>
-        <Button
-          type="submit"
-          className="w-full bg-dunlop-yellow text-dunlop-black hover:shadow-2xl hover:bg-dunlop-gray uppercase active:text-[#979797] active:bg-[#BABABA]">
-          đăng nhập
-        </Button>
+      <DialogContent
+        className={`${modalType === 'register' ? '!max-w-[600px]' : '!max-w-[500px]'} p-10`}>
+        {modalType === 'login' && (
+          <SignIn openRegister={() => setModalType('register')} />
+        )}
+        {modalType === 'register' && (
+          <RegisterPage openLogin={() => setModalType('login')} />
+        )}
       </DialogContent>
     </Dialog>
   );
