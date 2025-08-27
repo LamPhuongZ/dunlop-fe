@@ -1,5 +1,7 @@
 import React from 'react';
 import HistoryContainer from './components/HistoryContainer';
+import './index.css';
+``;
 const AboutUs = () => {
   const aboutData = [
     {
@@ -8,7 +10,6 @@ const AboutUs = () => {
     },
     {
       imgUrl: '/images/about-us-1.png',
-      alt: '1992',
     },
     {
       title: '2004',
@@ -16,7 +17,6 @@ const AboutUs = () => {
     },
     {
       imgUrl: '/images/about-us-2.png',
-      alt: '2004',
     },
     {
       title: '2005',
@@ -24,7 +24,6 @@ const AboutUs = () => {
     },
     {
       imgUrl: '/images/about-us-3.png',
-      alt: '2005',
     },
     {
       title: '2009',
@@ -32,7 +31,6 @@ const AboutUs = () => {
     },
     {
       imgUrl: '/images/about-us-4.png',
-      alt: '2009',
     },
     {
       title: '2012',
@@ -40,7 +38,6 @@ const AboutUs = () => {
     },
     {
       imgUrl: '/images/about-us-5.png',
-      alt: '2012',
     },
   ];
 
@@ -50,7 +47,7 @@ const AboutUs = () => {
   }
   return (
     <div className="bg-about-us-yellow max-w-[1920px] text-dunlop-black font-inter">
-      <section id="about-us-hero" className="py-24 px-10">
+      <section id="about-us-hero" className="py-24 px-10 mx-auto">
         <header>
           <h1 className="text-center text-5xl leading-16 font-bold tracking-tighter">
             Tự hào Tyre Pacific
@@ -59,11 +56,11 @@ const AboutUs = () => {
             Nhà phân phối độc quyền Dunlop
           </p>
         </header>
-        <div className="mt-20 space-y-20">
+        <div className="history-container mt-20 space-y-20">
           {pairedData.map((pair, index) => (
             <div
               key={`pair-${index}`}
-              className={`history-item relative flex flex-col md:flex-row justify-center gap-8 md:gap-32 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+              className={`max-w-[1200px] mx-auto history-item relative flex flex-col justify-between md:flex-row gap-8 md:gap-32 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
               {pair.map((item, subIndex) => (
                 <HistoryContainer
                   key={`history-${index}-${subIndex}`}
