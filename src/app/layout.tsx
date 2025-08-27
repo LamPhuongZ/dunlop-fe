@@ -56,7 +56,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/images/dunlop-logo.svg" type="image/jpg" />
+        <link rel="icon" href="/svgs/dunlop-logo.svg" type="image/svg+xml" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
