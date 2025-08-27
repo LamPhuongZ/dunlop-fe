@@ -1,0 +1,63 @@
+.history-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: #ff0000;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.history-item::after {
+  z-index: 2;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  border: 4px solid #fff;
+  border-radius: 100%;
+  background-color: #ff0000;
+  transform: translate(-50%, -50%);
+}
+
+.history-container {
+  position: relative;
+}
+
+.history-container::before {
+  content: '';
+  position: absolute;
+  top: calc(50% + 24px);
+  left: 50%;
+  width: 0;
+  height: calc(100% - 280px);
+  transform: translate(-50%, -50%);
+  border-left: 5px dashed var(--color-about-us-dark-gray);
+}
+
+@media (max-width: 767px) {
+  .history-item::before {
+    top: 50%;
+    left: -2rem;
+  }
+
+  .history-item::after {
+    top: 50%;
+    left: -2rem;
+  }
+
+  .history-container {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .history-container::before {
+    left: 0;
+    height: calc(100% - 580px);
+  }
+}
