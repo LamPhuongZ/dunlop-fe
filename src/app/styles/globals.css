@@ -79,6 +79,10 @@
   scrollbar-width: none; /* Firefox */
 }
 
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
